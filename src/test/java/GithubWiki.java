@@ -12,7 +12,7 @@ public class GithubWiki {
 //        - Перейдите в раздел Wiki проекта
         $("#wiki-tab").click();
 //        - Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
-        $(byText("Show 2 more pages…")).click();
+        $(".wiki-pages-box button").click();
         $(".wiki-pages-box").shouldHave(text("SoftAssertions"));
 //        - Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
         $(".wiki-pages-box").$(byText("SoftAssertions")).click();
