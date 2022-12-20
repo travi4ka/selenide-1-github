@@ -12,9 +12,10 @@ public class GithubWiki {
 //        - Перейдите в раздел Wiki проекта
         $("#wiki-tab").click();
 //        - Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
-        $(".markdown-body").shouldHave(text("Soft assertions"));
+        $(byText("Show 2 more pages…")).click();
+        $(".wiki-pages-box").shouldHave(text("SoftAssertions"));
 //        - Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
-        $(".markdown-body").$(byText("Soft assertions")).click();
+        $(".wiki-pages-box").$(byText("SoftAssertions")).click();
         $("#user-content-3-using-junit5-extend-test-class").parent().shouldHave(text("JUnit5"))
                 .sibling(0).$("pre").shouldBe(visible);
     }
